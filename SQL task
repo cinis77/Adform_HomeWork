@@ -1,0 +1,35 @@
+
+--Users SQL table
+CREATE TABLE [dbo].[Users] (
+    [UserID]   INT            IDENTITY (1, 1) NOT NULL,
+    [UserName] NVARCHAR (200) NULL,
+    [ClientId] INT            NULL,
+    PRIMARY KEY CLUSTERED ([UserID] ASC)
+);
+
+--Order SQL table
+CREATE TABLE [dbo].[Orders] (
+    [OrderID] INT             NOT NULL,
+    [Total]   DECIMAL (12, 2) NULL,
+    [UserId]  INT             NOT NULL,
+    PRIMARY KEY CLUSTERED ([OrderID] ASC),
+    
+);
+
+
+--Data to be added
+INSERT INTO USERS ( UserName, ClientId) VALUES ( 'Audis', 5)
+INSERT INTO USERS ( UserName, ClientId) VALUES ( 'Balius', 5)
+INSERT INTO USERS ( UserName, ClientId) VALUES ( 'Diena', 6)
+INSERT INTO ORDERS (OrderID, Total, UserId) VALUES (33, 100, 1)
+INSERT INTO ORDERS (OrderID, Total, UserId) VALUES (55, 1000, 2)
+INSERT INTO ORDERS (OrderID, Total, UserId) VALUES (77, 10, 7)
+
+
+--Task number 1
+SELECT ISNULL(CAST(Users.ClientId AS nvarchar(10)), 'n/a') 
+, SUM (ISNULL(Orders.Total, 0)) AS total
+FROM Orders 
+FULL OUTER JOIN Users ON Users.UserID = Orders.UserId
+Group by Users.ClientId
+ORDER by total DESC
