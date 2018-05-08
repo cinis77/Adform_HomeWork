@@ -143,8 +143,9 @@ namespace Adform_csharp_cha
             TimesAskForResponse++;
             if (TimesAskForResponse == variableForWorkAround)
             {
-                DataFormatingForOutPut();
                 kk = kk.OrderBy(x => x.dateOfData).ToList();
+                DataFormatingForOutPut();
+                
 
             }
         }
