@@ -1,0 +1,12 @@
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\Adform_csharp_cha.exe.config
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\Adform_csharp_cha.exe
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\Adform_csharp_cha.pdb
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\IdentityModel.dll
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\Newtonsoft.Json.dll
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\System.Text.Encodings.Web.dll
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\IdentityModel.xml
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\Newtonsoft.Json.xml
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\bin\Debug\System.Text.Encodings.Web.xml
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\obj\Debug\Adform_csharp_cha.csprojResolveAssemblyReference.cache
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\obj\Debug\Adform_csharp_cha.exe
+c:\users\drentelis\documents\visual studio 2015\Projects\Adform_csharp_cha\Adform_csharp_cha\obj\Debug\Adform_csharp_cha.pdb
