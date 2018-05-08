@@ -27,7 +27,7 @@ namespace Adform_csharp_cha
         static void Main(string[] args)
         {
           
-            kazkas();
+            ConnectToAPiToGetData();
             Console.WriteLine("Laukiu");
 
             while (true)
@@ -39,7 +39,7 @@ namespace Adform_csharp_cha
         }
 
 
-        static async void kazkas()
+        static async void ConnectToAPiToGetData()
         {
             var randukazka = new DiscoveryClient("https://id.adform.com/sts/.well-known/openid-configuration");
             var doc = await randukazka.GetAsync();
