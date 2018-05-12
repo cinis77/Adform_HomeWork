@@ -13,6 +13,11 @@ using System.Threading.Tasks;
 
 namespace Adform_csharp_cha
 {
+
+    
+
+    
+
     class DataTypes
     {
         public double dateOfData;
@@ -43,6 +48,7 @@ namespace Adform_csharp_cha
         {
             var randukazka = new DiscoveryClient("https://id.adform.com/sts/.well-known/openid-configuration");
             var doc = await randukazka.GetAsync();
+            
 
             var tokenEndpoint = doc.TokenEndpoint;
             var keys = doc.KeySet.Keys;
@@ -83,8 +89,11 @@ namespace Adform_csharp_cha
         
         static async void GetStreamOfData(HttpClient klient, DateTime start, DateTime end)
         {
-            string zodis = "{\"filter\": {\"date\": {\"from\": \""+start.Year+"-"+start.Month+"-"+start.Day+"\",\"to\": \""+end.Year+"-"+end.Month+"-"+end.Day+ "\" } },\"dimensions\" : [ \"date\" ],   \"metrics\": [\"bidRequests\" ]  }";
-            HttpContent contentPost = new StringContent(zodis, Encoding.UTF8, "application/json");
+            
+            FilterDate filterDate = new FilterDate(start, end);
+            var jsonStringCreator = new JsonStringCreator(filter: new FilterType (filterDate), dimension: new string[] { "date" }, metrics: new string[] { "bidRequests" });
+            string output = jsonStringCreator.CreateJsonString(jsonStringCreator);
+            HttpContent contentPost = new StringContent(output, Encoding.UTF8, "application/json");
             var respons = await klient.PostAsync("https://api.adform.com/v1/reportingstats/publisher/reportdata", contentPost);
             var responseString = await respons.Content.ReadAsStringAsync();
             
