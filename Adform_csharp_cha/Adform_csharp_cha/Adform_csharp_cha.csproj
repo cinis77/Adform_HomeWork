@@ -55,7 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetFormat.cs" />
+    <Compile Include="DataInformation.cs" />
     <Compile Include="ClientInformation.cs" />
+    <Compile Include="DataFromResponse.cs" />
     <Compile Include="FilterDate.cs" />
     <Compile Include="FilterType.cs" />
     <Compile Include="JsonStringCreator.cs" />

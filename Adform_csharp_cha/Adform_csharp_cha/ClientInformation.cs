@@ -22,6 +22,7 @@ namespace Adform_csharp_cha
         /// </summary>
         public async Task FormHttpClientData()
         {
+            Console.WriteLine("Creating client information");
             var clientDiscovery = await DiscoverClientInformation.GetAsync();
             TokenClient newClient = new TokenClient(clientDiscovery.TokenEndpoint, ClientID, clientSecret: ClientSecret, style: AuthenticationStyle.PostValues);
             var tokenClientResponse = await newClient.RequestClientCredentialsAsync(Scope);

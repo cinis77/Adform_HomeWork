@@ -24,7 +24,7 @@ namespace Adform_csharp_cha
         public string CreateJsonString(object objektas)
         {
             string output = JsonConvert.SerializeObject(objektas, new IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd" });
-
+            Console.WriteLine("creating Json string");
             if (output == null || output == "{}")
                 throw new JsonException(message: "Failed to create JSON string");
 
