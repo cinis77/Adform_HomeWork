@@ -12,7 +12,7 @@ namespace Adform_csharp_cha
     
     class JsonStringCreator
     {
-        public FilterType filter { get; }
+        public IFilterTypeData filter { get; }
         public string[] dimensions { get; }
         public string[] metrics { get; }
 
@@ -33,7 +33,7 @@ namespace Adform_csharp_cha
 
 
      
-        public JsonStringCreator(FilterType filter, string[] dimension, string[] metrics)
+        public JsonStringCreator(IFilterTypeData filter, string[] dimension, string[] metrics)
         {
             this.filter = filter;
             this.dimensions = dimension;

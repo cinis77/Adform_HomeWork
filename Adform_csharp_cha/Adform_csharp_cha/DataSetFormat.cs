@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adform_csharp_cha
 {
-    class DataSetFormat
+   public class DataSetFormat 
     {
         public DateTime DateOfData { get; private set; }
         public int DataAmount { get; private set; }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adform_csharp_cha
+namespace Adform_csharp_cha 
 {
-    class FilterType
+    class FilterType : IFilterTypeData
     {
         
         public FilterDate date { get; }
