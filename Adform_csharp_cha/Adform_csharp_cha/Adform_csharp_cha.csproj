@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientInformation.cs" />
     <Compile Include="FilterDate.cs" />
     <Compile Include="FilterType.cs" />
     <Compile Include="JsonStringCreator.cs" />

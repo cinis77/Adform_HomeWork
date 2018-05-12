@@ -31,8 +31,8 @@ namespace Adform_csharp_cha
         public static int TimesAskForResponse;
         static void Main(string[] args)
         {
-          
-            kazkas();
+            Testavimui();
+            
             Console.WriteLine("Laukiu");
 
             while (true)
@@ -43,50 +43,29 @@ namespace Adform_csharp_cha
 
         }
 
-
-        static async void kazkas()
+        static async void Testavimui()
         {
-            var randukazka = new DiscoveryClient("https://id.adform.com/sts/.well-known/openid-configuration");
-            var doc = await randukazka.GetAsync();
-            
-
-            var tokenEndpoint = doc.TokenEndpoint;
-            var keys = doc.KeySet.Keys;
-            string ad = doc.TokenEndpoint;
-            //string address = "https://id.adform.com/sts/connect/token";
-            string scope = "https://api.adform.com/scope/eapi";
-            string clientID = "sellside.apiteam@tests.adform.com";
-            string clientSecret = "xPDUpHFZHuobERbKVjVxPujndfyg4C6KLDItwLwK";
-            var stilius = new AuthenticationStyle();
-            stilius = AuthenticationStyle.PostValues;
-
-            var client = new TokenClient(address: ad, clientId: clientID, clientSecret: clientSecret, style: stilius);
-            var response = await client.RequestClientCredentialsAsync(scope);
-            var token = response.AccessToken;
-            HttpClient klient = new HttpClient();
-            klient.SetToken("Bearer", token);
-            DateTime data = new DateTime(year:2018, month: 01, day: 01);
+            ClientInformation clientInformation = new ClientInformation("https://id.adform.com/sts/.well-known/openid-configuration", "https://api.adform.com/scope/eapi", "sellside.apiteam@tests.adform.com", "xPDUpHFZHuobERbKVjVxPujndfyg4C6KLDItwLwK");
+            await clientInformation.FormHttpClientData();
+            DateTime data = new DateTime(year: 2018, month: 01, day: 01);
             TimesAskForResponse = 0;
-            while(data < DateTime.Today)
+            while (data < DateTime.Today)
             {
-                
+
                 DateTime temp = data.AddDays(6);
-                GetStreamOfData(klient, data, temp);
+                GetStreamOfData(clientInformation.GetHttpClientData(), data, temp);
                 temp = temp.AddDays(1);
                 data = temp;
-                if(data.DayOfYear > DateTime.Today.DayOfYear)
+                if (data.DayOfYear > DateTime.Today.DayOfYear)
                 {
                     data = DateTime.Today;
                 }
-                
-            }
-            
-           
-                
-            
 
+            }
         }
-        
+
+
+
         static async void GetStreamOfData(HttpClient klient, DateTime start, DateTime end)
         {
             
