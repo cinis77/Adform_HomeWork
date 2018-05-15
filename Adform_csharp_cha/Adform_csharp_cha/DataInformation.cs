@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Adform_csharp_cha
 {
-    class DataInformation
+    public class DataInformation
     {
         HttpClient Client { get; }
         DateTime StartDate { get; set; }
@@ -28,6 +28,8 @@ namespace Adform_csharp_cha
                 string output = jsonStringCreator.CreateJsonString(jsonStringCreator);
                 HttpContent contentPost = new StringContent(output, Encoding.UTF8, "application/json");
                 var respons = await Client.PostAsync("https://api.adform.com/v1/reportingstats/publisher/reportdata", contentPost);
+                if (respons.ReasonPhrase != "OK")
+                    throw new HttpRequestException(message: "Issue with request HTTP cleint post. Reason: " + respons.ReasonPhrase);
                 var responseString = await respons.Content.ReadAsStringAsync();
                 DataFromResponse dataFromResponse = JsonConvert.DeserializeObject<DataFromResponse>(responseString);
                 Console.WriteLine("Deserializing JSON and parsing");

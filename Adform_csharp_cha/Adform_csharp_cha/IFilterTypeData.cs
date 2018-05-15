@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adform_csharp_cha
 {
-    interface IFilterTypeData
+    public interface IFilterTypeData
     {
         FilterDate date { get; }
     }

@@ -14,7 +14,7 @@ namespace Adform_csharp_cha
         string ClientID { get; }
         string ClientSecret { get; }
         DiscoveryClient DiscoverClientInformation { get; }
-        HttpClient HttpClientForRequest;
+        HttpClient HttpClientForRequest { get; set; }
 
 
         /// <summary>

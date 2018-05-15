@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adform_csharp_cha
 {
-    class FilterDate
+    public class FilterDate
     {
         
         public DateTime from { get; private set; }

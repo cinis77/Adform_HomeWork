@@ -45,7 +45,7 @@ namespace Adform_csharp_cha
 
         }
 
-               static async void FindAnomalyBetweenBids()
+        static async void FindAnomalyBetweenBids()
         {
             ClientInformation clientInformation = new ClientInformation("https://id.adform.com/sts/.well-known/openid-configuration", "https://api.adform.com/scope/eapi", "sellside.apiteam@tests.adform.com", "xPDUpHFZHuobERbKVjVxPujndfyg4C6KLDItwLwK");
             await clientInformation.FormHttpClientData();

@@ -10,7 +10,7 @@ namespace Adform_csharp_cha
 {
 
     
-    class JsonStringCreator
+    public class JsonStringCreator
     {
         public IFilterTypeData filter { get; }
         public string[] dimensions { get; }
@@ -25,7 +25,7 @@ namespace Adform_csharp_cha
         {
             string output = JsonConvert.SerializeObject(objektas, new IsoDateTimeConverter() { DateTimeFormat = "yyyy-MM-dd" });
             Console.WriteLine("creating Json string");
-            if (output == null || output == "{}")
+            if (output == "null" || output == "{}"||output == null)
                 throw new JsonException(message: "Failed to create JSON string");
 
             return output;
